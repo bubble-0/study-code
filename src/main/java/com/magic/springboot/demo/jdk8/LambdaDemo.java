@@ -1,6 +1,5 @@
-package com.magic.springboot.demo;
+package com.magic.springboot.demo.jdk8;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;

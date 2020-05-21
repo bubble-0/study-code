@@ -1,4 +1,4 @@
-package com.magic.springboot.demo;
+package com.magic.springboot.demo.jdk8;
 
 import java.util.Arrays;
 import java.util.Collection;

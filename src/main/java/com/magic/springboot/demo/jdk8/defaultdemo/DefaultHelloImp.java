@@ -1,4 +1,4 @@
-package com.magic.springboot.demo.defaultdemo;
+package com.magic.springboot.demo.jdk8.defaultdemo;
 
 public class DefaultHelloImp implements IDefaultHello,IDefaultHello2{
     //不需要在去重写声明了static 和 default的方法

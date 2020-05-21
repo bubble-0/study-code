@@ -1,8 +1,7 @@
-package com.magic.springboot.demo;
+package com.magic.springboot.demo.jdk8;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
 public class LocalDateDemo {

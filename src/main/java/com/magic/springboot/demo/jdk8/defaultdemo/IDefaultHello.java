@@ -1,6 +1,6 @@
-package com.magic.springboot.demo.defaultdemo;
+package com.magic.springboot.demo.jdk8.defaultdemo;
 
-public interface IDefaultHello2 {
+public interface IDefaultHello {
 
     void sayHello();
 
@@ -8,7 +8,7 @@ public interface IDefaultHello2 {
         System.out.println("static  hello");
     }
 
-    default void defaultSayHello2(){
+    default void defaultSayHello(){
         System.out.println("default  hello");
     }
 }
