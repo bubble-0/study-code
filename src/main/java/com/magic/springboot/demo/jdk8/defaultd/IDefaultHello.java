@@ -1,4 +1,4 @@
-package com.magic.springboot.demo.jdk8.defaultdemo;
+package com.magic.springboot.demo.jdk8.defaultd;
 
 public interface IDefaultHello {
 

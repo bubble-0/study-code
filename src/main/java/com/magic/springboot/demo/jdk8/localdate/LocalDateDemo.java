@@ -1,4 +1,4 @@
-package com.magic.springboot.demo.jdk8;
+package com.magic.springboot.demo.jdk8.localdate;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
