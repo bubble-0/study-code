@@ -1,6 +1,7 @@
 package com.magic.springboot.mybatis.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.magic.springboot.aop.annotation.Log;
 import com.magic.springboot.common.context.Result;
 import com.magic.springboot.mybatis.entites.Person;
 import com.magic.springboot.mybatis.service.PersonService;
@@ -18,6 +19,7 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
+    @Log("添加用户")
     @PostMapping("addPerson")
     public JSONObject addPerson(Person person) {
         JSONObject jsonObject = new JSONObject();
