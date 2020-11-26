@@ -28,6 +28,9 @@ public class MethodBlockDemo {
 
         new MethodBlockDemo();
 
+        new MethodBlockDemo();
+
+        new MethodBlockDemo();
         //普通代码块按顺序执行
         {
             System.out.println("我在最后输出了一个普通代码块!  嘿嘿 !");
