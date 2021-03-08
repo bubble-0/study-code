@@ -1,4 +1,4 @@
-package com.magic.springboot.aop.annotation;
+package com.magic.springboot.spring.aop.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

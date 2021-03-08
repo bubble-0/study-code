@@ -1,4 +1,4 @@
-package com.magic.springboot.aop.entities;
+package com.magic.springboot.spring.aop.entities;
 
 public class SysLog {
 
