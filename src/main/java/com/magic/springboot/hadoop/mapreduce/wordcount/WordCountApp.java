@@ -27,10 +27,11 @@ public class WordCountApp {
      */
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ClassNotFoundException {
         //文件的输入路径和输出路径
-        if (args.length != 2) {
-            System.out.println("参数个数不正确!");
-            return;
-        }
+//        if (args.length != 2) {
+//            System.out.println("参数个数不正确!");
+//            return;
+//        }
+        args = new String[]{"/test/mapreduce/wordcount","/test/mapreduce/wordcountResult"};
 
         //指明用户名
         System.setProperty("HADOOP_USER_NAME", HADOOP_USER_NAME);
@@ -44,11 +45,12 @@ public class WordCountApp {
         //设置map类和reduce类
         job.setMapperClass(WordCountMapper.class);
         job.setReducerClass(WordCountReducer.class);
-
+        job.setCombinerClass(WordCountReducer.class);
+        job.setPartitionerClass(WordCountPartitioner.class);
         //设置map输出key的类型和value的类型
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
-
+        job.setNumReduceTasks(new String[]{"Flink", "HBase", "Hadoop", "Hive", "Spark", "Storm"}.length);
         //设置reduce输出的key类型和reduce类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
