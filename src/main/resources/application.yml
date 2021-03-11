@@ -1,12 +1,31 @@
 spring:
+  application: my-springboot
+  rabbitmq:
+    host: 192.168.111.111
+    port: 5679
+    username: admin
+    password: admin
+  redis:
+    database: 0
+    host: 192.168.111.111
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
+    password:
+    port: 6379
   datasource:
     druid:
       # 数据库访问配置, 使用druid数据源
       type: com.alibaba.druid.pool.DruidDataSource
-      driver-class-name: oracle.jdbc.driver.OracleDriver
-      url: jdbc:oracle:thin:@192.168.30.148:1521/orcl
-      username: mj_test
-      password: mj_test
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+      #driver-class-name: oracle.jdbc.driver.OracleDriver
+      #url: jdbc:oracle:thin:@192.168.1.212:1521/orcl
+      username: root
+      password: 1234qwer
       # 连接池配置
       initial-size: 5
       min-idle: 5

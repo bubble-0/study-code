@@ -1,8 +1,8 @@
-package com.magic.springboot.aop.aspect;
+package com.magic.springboot.spring.aop.aspect;
 
-import com.magic.springboot.aop.annotation.Log;
-import com.magic.springboot.aop.entities.SysLog;
-import com.magic.springboot.aop.service.SysLogService;
+import com.magic.springboot.spring.aop.annotation.Log;
+import com.magic.springboot.spring.aop.entities.SysLog;
+import com.magic.springboot.spring.aop.service.SysLogService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -21,7 +21,7 @@ public class LogAspect {
     @Autowired
     SysLogService sysLogService;
 
-    @Pointcut("@annotation(com.magic.springboot.aop.annotation.Log)")
+    @Pointcut("@annotation(com.magic.springboot.spring.aop.annotation.Log)")
     public void pointcut() { }
 
     @Around("pointcut()")

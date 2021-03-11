@@ -1,6 +1,6 @@
-package com.magic.springboot.aop.Mapper;
+package com.magic.springboot.spring.aop.Mapper;
 
-import com.magic.springboot.aop.entities.SysLog;
+import com.magic.springboot.spring.aop.entities.SysLog;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 

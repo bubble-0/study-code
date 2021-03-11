@@ -1,12 +1,11 @@
 package com.magic.springboot.mybatis.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.magic.springboot.aop.annotation.Log;
+import com.magic.springboot.spring.aop.annotation.Log;
 import com.magic.springboot.common.context.Result;
 import com.magic.springboot.mybatis.entites.Person;
 import com.magic.springboot.mybatis.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
