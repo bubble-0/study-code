@@ -1,6 +1,7 @@
 package com.magic.springboot.hadoop.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 
@@ -9,16 +10,16 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class HdfsDemo {
-    private static final String HDFS_PATH = "hdfs://192.168.111.121:8020";
+    private static final String HDFS_PATH = "hdfs://192.168.3.43:8020";
     private static final String HDFS_USER = "root";
     private static FileSystem fileSystem;
 
     public static void main(String[] args) throws Exception {
         init();
 
-        mkdir();
+        //mkdir();
 
-        copyFromLocalFile();
+        //copyFromLocalFile();
 
         System.out.println("upload succ!");
     }
@@ -28,7 +29,7 @@ public class HdfsDemo {
         try {
             Configuration configuration = new Configuration();
             configuration.set("dfs.replication", "1");
-            fileSystem = FileSystem.get(new URI(HDFS_PATH),configuration,HDFS_USER);
+            fileSystem = FileSystem.get(new URI(HDFS_PATH), configuration, HDFS_USER);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -47,5 +48,12 @@ public class HdfsDemo {
         Path src = new Path("D:\\magicmall\\magic-springboot\\target\\com.magic-1.0.0-SNAPSHOT.jar");
         Path dst = new Path("/test/mapreduceapp");
         fileSystem.copyFromLocalFile(src, dst);
+    }
+
+    public static void listFiles() throws IOException {
+        FileStatus[] fileStatus = fileSystem.listStatus(new Path("/"));
+        for (int i = 0; i < fileStatus.length; i ++) {
+            System.out.println(fileStatus);
+        }
     }
 }
