@@ -1,9 +1,7 @@
 package com.magic.springboot.hadoop.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileStatus;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.*;
 
 import java.io.IOException;
 import java.net.URI;
@@ -20,7 +18,9 @@ public class HdfsDemo {
         //mkdir();
 
         //copyFromLocalFile();
-
+        //listFiles();
+        //listFilesRecursive();
+        getFileBlockLocations();
         System.out.println("upload succ!");
     }
 
@@ -52,8 +52,24 @@ public class HdfsDemo {
 
     public static void listFiles() throws IOException {
         FileStatus[] fileStatus = fileSystem.listStatus(new Path("/"));
-        for (int i = 0; i < fileStatus.length; i ++) {
-            System.out.println(fileStatus);
+        for (int i = 0; i < fileStatus.length; i++) {
+            System.out.println(fileStatus[i]);
+        }
+    }
+
+    public static void listFilesRecursive() throws IOException {
+        RemoteIterator<LocatedFileStatus> files = fileSystem.listFiles(new Path("/"), true);
+        while (files.hasNext()) {
+            System.out.println(files.next());
+        }
+    }
+
+    public static void getFileBlockLocations() throws IOException {
+        FileStatus fileStatus = fileSystem.getFileStatus(new Path("/test/fxq_235_poc-1.0-SNAPSHOT.jar"));
+        System.out.println(fileStatus.getLen());
+        BlockLocation[] fileBlockLocations = fileSystem.getFileBlockLocations(fileStatus, 0, fileStatus.getLen());
+        for (BlockLocation blockLocation : fileBlockLocations) {
+            System.out.println(blockLocation);
         }
     }
 }
